@@ -1,8 +1,19 @@
+import React, { useState } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Home from "./containers/Home";
+import Item from "./components/Item";
+
 function App() {
+
   return (
-    <div className="App">
-      <h1>It is hooked up</h1>
-    </div>
+    <Router>
+      <Route path="/" exact>
+        <Home />
+      </Route>
+      <Route path="/items/:id">
+        <Item />
+      </Route>
+    </Router>
   );
 }
 
