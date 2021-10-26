@@ -26,3 +26,10 @@ export const findItem = async (id) => {
 
     return cleanItem(docSnap);
 };
+
+// Updating item quantity in firestore
+export const updateItem = async (id, partial) => {
+    const collectionRef = firestore.collection("items");
+    const docRef = collectionRef.doc(id);
+    await docRef.update(partial);
+}
