@@ -5,6 +5,7 @@ import Home from "./containers/Home";
 import ItemList from "./containers/ItemList";
 import Item from "./components/Item";
 import { getItems } from "./services/stock";
+import "./App.module.scss";
 
 function App() {
 

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { getItems } from '../../services/stock';
 import ItemCard from '../../components/ItemCard/ItemCard';
 import Carousel from '../../components/Carousel';
+import styles from "./ItemList.module.scss";
 
 const ItemList = () => {
     const [items, setItems] = useState(null);
@@ -17,11 +18,13 @@ const ItemList = () => {
     return (
         <div>
             <Carousel />
-            {items &&
-                items.map((item, index) => (
-                    <ItemCard item={item} key={index} onUpdate={handleQuantity} />
-                ))
-            }
+            <div className={styles.ItemsHome}>
+                {items &&
+                    items.map((item, index) => (
+                        <ItemCard item={item} key={index} onUpdate={handleQuantity} />
+                    ))
+                }
+            </div>
         </div>
     )
 }

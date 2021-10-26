@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { updateItem } from "../../services/stock";
+import styles from "./ItemCard.module.scss";
 
 const ItemCard = ({ item, onUpdate }) => {
 	const initialQty = item.quantity;
@@ -37,7 +38,7 @@ const ItemCard = ({ item, onUpdate }) => {
 
 	return (
 		<div className="card-deck">
-			<div className="card">
+			<div className={`card ${styles.ItemsHome} text-center`}>
 				<img src={imageItem} alt={item.examine} className="card-img-top" />
 				<div className="card-body">
 					<h5 className="card-title">{item.name}</h5>
@@ -52,9 +53,6 @@ const ItemCard = ({ item, onUpdate }) => {
 					</p>
 				</div>
 			</div>
-			<p key={item.id}>ID: {item.id}</p>
-			<p>Name: {item.name}</p>
-			<p>{item.examine}</p>
 		</div>
 	);
 };
