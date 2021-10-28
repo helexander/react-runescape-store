@@ -1,0 +1,10 @@
+@import "../../assets/typography.scss";
+
+.nav {
+	&-item {
+		&--text {
+			font-family: osrs-font;
+			color: yellow;
+		}
+	}
+}

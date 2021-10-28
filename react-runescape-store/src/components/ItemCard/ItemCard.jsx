@@ -41,16 +41,29 @@ const ItemCard = ({ item, onUpdate }) => {
 			<div className={`card ${styles.ItemsHome} text-center`}>
 				<img src={imageItem} alt={item.examine} className="card-img-top" />
 				<div className="card-body">
-					<h5 className="card-title">{item.name}</h5>
+					<h5 className="card-title">
+						<Link to={`/items/${item.id}`}>{item.name}</Link>
+					</h5>
 					<p className="card-text">{item.examine}</p>
-					<button onClick={handleDecrement}>-</button>
+					<p>
+						Price: <b>${item.price}.00</b>
+					</p>
+					<button
+						className="btn btn-danger rounded-circle"
+						onClick={handleDecrement}
+					>
+						-
+					</button>
 					<span>Quantity: {quantity}</span>
-					<button onClick={handleIncrement}>+</button>
+					<button
+						className="btn btn-success rounded-circle"
+						onClick={handleIncrement}
+					>
+						+
+					</button>
 				</div>
 				<div className="card-footer">
-					<p>
-						<Link to={`/items/${item.id}`}>{item.name}</Link>
-					</p>
+					<button className="btn btn-primary rounded-pill">Add to Cart</button>
 				</div>
 			</div>
 		</div>

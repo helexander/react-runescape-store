@@ -5,32 +5,24 @@ import Home from "./containers/Home";
 import ItemList from "./containers/ItemList";
 import Item from "./components/Item";
 import { getItems } from "./services/stock";
-import "./App.module.scss";
+import styles from "./App.module.scss";
 
 function App() {
 
-  const [items, setItems] = useState(null);
-
-  const populateItems = async () => {
-    const data = await getItems();
-    setItems(data);
-  };
-
-  useEffect(() => populateItems(), []);
-  const handleQuantity = () => populateItems();
-
   return (
-    <Router>
-      <Nav />
-      <Switch>
-        <Route path="/" exact>
-          <ItemList />
-        </Route>
-        <Route path="/items/:id">
-          <Item />
-        </Route>
-      </Switch>
-    </Router>
+    <div className={styles.container_app}>
+      <Router>
+        <Nav />
+        <Switch>
+          <Route path="/" exact>
+            <ItemList />
+          </Route>
+          <Route path="/items/:id">
+            <Item />
+          </Route>
+        </Switch>
+      </Router>
+    </div>
   );
 }
 
