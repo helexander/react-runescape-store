@@ -11,7 +11,6 @@ const Carousel = () => {
             <div className="carousel-inner">
                 <div className="carousel-item active">
                     <img className="d-block" src="/images/scimitar.png" alt="First slide" />
-                    <p>Scimitar</p>
                 </div>
                 <div className="carousel-item">
                     <img className="d-block" src="/images/defender.png" alt="Second slide" />
