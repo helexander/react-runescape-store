@@ -1,36 +1,32 @@
-import React, { useState, useEffect } from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import styles from "./App.module.scss";
+
+import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Nav from "./components/Nav/Nav";
-import Home from "./containers/Home";
+import Navigation from "./components/Nav/Nav";
 import ItemList from "./containers/ItemList";
 import Item from "./components/Item";
-import { getItems } from "./services/stock";
-import "./App.module.scss";
+import ItemCart from './containers/Cart';
 
 function App() {
 
-  const [items, setItems] = useState(null);
-
-  const populateItems = async () => {
-    const data = await getItems();
-    setItems(data);
-  };
-
-  useEffect(() => populateItems(), []);
-  const handleQuantity = () => populateItems();
-
   return (
-    <Router>
-      <Nav />
-      <Switch>
-        <Route path="/" exact>
-          <ItemList />
-        </Route>
-        <Route path="/items/:id">
-          <Item />
-        </Route>
-      </Switch>
-    </Router>
+    <div className={`${styles.container_app}`}>
+      <Router>
+        <Navigation />
+        <Switch>
+          <Route path="/" exact>
+            <ItemList />
+          </Route>
+          <Route path="/items/:id">
+            <Item />
+          </Route>
+          <Route path="/cart">
+            <ItemCart />
+          </Route>
+        </Switch>
+      </Router>
+    </div>
   );
 }
 

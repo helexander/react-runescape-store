@@ -1,2 +1,2 @@
-import Carousel from "./Carousel";
-export default Carousel;
+import CarouselFeature from "./CarouselFeature";
+export default CarouselFeature;
