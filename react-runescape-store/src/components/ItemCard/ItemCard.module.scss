@@ -1,7 +1,19 @@
-.card_item {
+img {
+	height: 150px;
 	width: 150px;
-	img {
-		height: 150px;
-		width: 150px;
+}
+
+.itemCard {
+	width: 14rem;
+	text-align: center;
+	margin: 20px;
+	background-color: #583a24;
+
+	a {
+		color: #ffffff;
+
+		&:hover {
+			color: #ffba08;
+		}
 	}
 }

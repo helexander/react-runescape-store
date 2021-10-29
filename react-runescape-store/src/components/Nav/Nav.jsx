@@ -1,40 +1,28 @@
-import { Link } from "react-router-dom";
 import "./Nav.module.scss";
+import { Link } from "react-router-dom";
+import { Nav, Navbar, Container } from "react-bootstrap";
 
-const Nav = () => {
+const Navigation = () => {
 	return (
-		<nav className="navbar navbar-expand-md navbar-dark bg-dark">
-			<ul className="navbar-nav mr-auto">
-				<li className="nav-item">
-					<Link to="/">
-						<span className="nav-item--text">Home</span>
-					</Link>
-				</li>
-			</ul>
-			<button
-				className="navbar-toggler"
-				type="button"
-				data-toggle="collapse"
-				data-target="#navbarNav"
-			>
-				<span className="navbar-toggler-icon"></span>
-			</button>
-			<div className="collapse navbar-collapse" id="navbarNav">
-				<ul className="navbar-nav ml-auto">
-					<li className="nav-item">
-						<Link className="nav-item--text" to="/" style={{ marginRight: 20 }}>
+		<Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+			<Container>
+				<Navbar.Brand as={Link} to="/">
+					Le Grand XChange
+				</Navbar.Brand>
+				<Navbar.Toggle aria-controls="responsive-navbar-nav" />
+				<Navbar.Collapse id="responsive-navbar-nav">
+					<Nav>
+						<Nav.Link as={Link} to="/">
 							Saved Items
-						</Link>
-					</li>
-					<li className="nav-item">
-						<Link className="nav-item--text" to="/">
+						</Nav.Link>
+						<Nav.Link as={Link} to="/">
 							Cart
-						</Link>
-					</li>
-				</ul>
-			</div>
-		</nav>
+						</Nav.Link>
+					</Nav>
+				</Navbar.Collapse>
+			</Container>
+		</Navbar>
 	);
 };
 
-export default Nav;
+export default Navigation;

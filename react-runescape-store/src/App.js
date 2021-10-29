@@ -1,16 +1,19 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
+import styles from "./App.module.scss";
+
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Nav from "./components/Nav/Nav";
+import Navigation from "./components/Nav/Nav";
 import ItemList from "./containers/ItemList";
 import Item from "./components/Item";
-import styles from "./App.module.scss";
+
 
 function App() {
 
   return (
-    <div className={styles.container_app}>
+    <div className={`${styles.container_app}`}>
       <Router>
-        <Nav />
+        <Navigation />
         <Switch>
           <Route path="/" exact>
             <ItemList />

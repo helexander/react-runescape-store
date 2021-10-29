@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { updateItem } from "../../services/stock";
-import "./ItemCard.module.scss";
+import styles from "./ItemCard.module.scss";
+import { Card, Button, Col } from "react-bootstrap";
 
 const ItemCard = ({ item, onUpdate }) => {
 	const initialQty = item.quantity;
@@ -37,36 +38,27 @@ const ItemCard = ({ item, onUpdate }) => {
 	};
 
 	return (
-		<div className="card-deck">
-			<div className="card text-center card_item">
-				<img src={imageItem} alt={item.examine} />
-				<div className="card-body">
-					<h5 className="card-title">
+		<Col className="mt-4">
+			<Card className={styles.itemCard}>
+				<Card.Img variant="top" src={imageItem} alt={item.name} />
+				<Card.Body>
+					<Card.Title>
 						<Link to={`/items/${item.id}`}>{item.name}</Link>
-					</h5>
-					<p className="card-text">{item.examine}</p>
-					<p>
-						Price: <b>${item.price}.00</b>
-					</p>
-					<button
-						className="btn btn-danger rounded-circle"
-						onClick={handleDecrement}
-					>
-						-
-					</button>
-					<span>Quantity: {quantity}</span>
-					<button
-						className="btn btn-success rounded-circle"
-						onClick={handleIncrement}
-					>
-						+
-					</button>
-				</div>
-				<div className="card-footer">
-					<button className="btn btn-primary rounded-pill">Add to Cart</button>
-				</div>
-			</div>
-		</div>
+					</Card.Title>
+					<Card.Text>{item.examine}</Card.Text>
+					<Card.Text>Price: ${item.price}.00</Card.Text>
+					<Card.Text>Quantity Available: {item.quantity}</Card.Text>
+				</Card.Body>
+				<Card.Footer className="text-muted">
+					<Button variant="danger" onClick={handleIncrement}>
+						Remove from Cart
+					</Button>
+					<Button variant="success" onClick={handleDecrement}>
+						Add to Cart
+					</Button>
+				</Card.Footer>
+			</Card>
+		</Col>
 	);
 };
 

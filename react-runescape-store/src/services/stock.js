@@ -18,6 +18,19 @@ export const getItems = async () => {
     return cleanItems(snapshot);
 };
 
+// Getting featured items from firestore
+export const getFeaturedItem = async () => {
+    const collectionRef = firestore.collection("items");
+
+    const querySnap = await collectionRef.get();
+    const clearedData = cleanItems(querySnap);
+    const featuredTrue = clearedData.filter(
+        (featuredTrue) => featuredTrue.featured
+    );
+
+    return featuredTrue;
+};
+
 // Getting a specific item from firestore
 export const findItem = async (id) => {
     const collectionRef = firestore.collection("items");
