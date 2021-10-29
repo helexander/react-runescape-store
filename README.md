@@ -3,22 +3,22 @@
 *Create a React Ecommerce Application*
 
 ## Requirements:
-- [ ] 2 pages:
-  - [ ] Home Page
-  - [ ] Specific Item
+- [x] 2 pages:
+  - [x] Home Page
+  - [x] Specific Item
 
-- [ ] Grid of products
-  - [ ] Carousel of featured products
-  - [ ] Product Page (with id parameter)
+- [x] Grid of products
+  - [x] Carousel of featured products
+  - [x] Product Page (with id parameter)
 *Similar to a product page on another site, allows you to add to cart and select product variants*
 
 - [ ] All products should be stored in firestore, you should store the following information:
-  - [ ] Quantity
+  - [x] Quantity
   - [ ] Variants (could be colors, sizes, etc)
-  - [ ] Price per unit
-  - [ ] Name
-  - [ ] Image url
-  - [ ] Members item (boolean)
+  - [x] Price per unit
+  - [x] Name
+  - [x] Image url
+  - [x] Members item (boolean)
 
 - [ ] All data should be stored in firestore and fetched by the frontend, there should be NO static product data in the react application
 
