@@ -4,7 +4,7 @@ import { updateItem } from "../../services/stock";
 import styles from "./ItemCard.module.scss";
 import { Card, Button } from "react-bootstrap";
 
-const ItemCard = ({ item, onUpdate }) => {
+const ItemCard = ({ item, onUpdate, handleAddProduct }) => {
 	const initialQty = item.quantity;
 	const [quantity, setQuantity] = useState(initialQty);
 
@@ -23,7 +23,7 @@ const ItemCard = ({ item, onUpdate }) => {
 	};
 
 	const handleIncrement = async () => {
-		if (quantity <= initialQty) {
+		if (quantity < initialQty) {
 			const partial = {
 				quantity: quantity + 1,
 			};
@@ -51,7 +51,10 @@ const ItemCard = ({ item, onUpdate }) => {
 				<Button variant="danger" onClick={handleIncrement}>
 					Remove from Cart
 				</Button>
-				<Button variant="success" onClick={handleDecrement}>
+				{/* <Button variant="success" onClick={handleDecrement}>
+					Add to Cart
+				</Button> */}
+				<Button variant="success" onClick={() => handleAddProduct(item)}>
 					Add to Cart
 				</Button>
 			</Card.Footer>

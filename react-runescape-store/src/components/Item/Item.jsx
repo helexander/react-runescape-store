@@ -21,7 +21,7 @@ const Item = () => {
 
     return (
         <div>
-
+            <img src={item.images} alt={item.name} />
             <h2>{item.name}</h2>
             <p>Description: {item.description}</p>
             <p>Members Item: {item.members ? "true" : "false"}</p>

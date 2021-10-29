@@ -18,7 +18,7 @@ const Navigation = () => {
 				<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 				<Navbar.Collapse id="responsive-navbar-nav">
 					<Nav className="ms-auto">
-						<Nav.Link as={Link} to="/">
+						<Nav.Link as={Link} to="/saved">
 							Saved Items
 						</Nav.Link>
 						<Nav.Link as={Link} to="/cart">
