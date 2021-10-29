@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navigation from "./components/Nav/Nav";
 import ItemList from "./containers/ItemList";
 import Item from "./components/Item";
-
+import ItemCart from './containers/Cart';
 
 function App() {
 
@@ -20,6 +20,9 @@ function App() {
           </Route>
           <Route path="/items/:id">
             <Item />
+          </Route>
+          <Route path="/cart">
+            <ItemCart />
           </Route>
         </Switch>
       </Router>

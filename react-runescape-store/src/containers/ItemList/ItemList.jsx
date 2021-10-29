@@ -3,6 +3,7 @@ import { getItems } from '../../services/stock';
 import ItemCard from '../../components/ItemCard/ItemCard';
 import CarouselFeature from '../../components/Carousel';
 import styles from "./ItemList.module.scss";
+import { Container } from 'react-bootstrap';
 
 const ItemList = () => {
     const [items, setItems] = useState(null);
@@ -18,13 +19,15 @@ const ItemList = () => {
     return (
         <div>
             <CarouselFeature />
-            <div className={styles.ItemsHome}>
-                {items &&
-                    items.map((item, index) => (
-                        <ItemCard item={item} key={index} onUpdate={handleQuantity} />
-                    ))
-                }
-            </div>
+            <Container>
+                <div className={styles.ItemsHome}>
+                    {items &&
+                        items.map((item, index) => (
+                            <ItemCard item={item} key={index} onUpdate={handleQuantity} />
+                        ))
+                    }
+                </div>
+            </Container>
         </div>
     )
 }

@@ -17,11 +17,11 @@ const Navigation = () => {
 				</Navbar.Brand>
 				<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 				<Navbar.Collapse id="responsive-navbar-nav">
-					<Nav>
+					<Nav className="ms-auto">
 						<Nav.Link as={Link} to="/">
 							Saved Items
 						</Nav.Link>
-						<Nav.Link as={Link} to="/">
+						<Nav.Link as={Link} to="/cart">
 							Cart
 						</Nav.Link>
 					</Nav>

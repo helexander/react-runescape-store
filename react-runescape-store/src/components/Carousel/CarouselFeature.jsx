@@ -23,14 +23,14 @@ const CarouselFeature = () => {
   }
 
   return (
-    <Carousel>
+    <Carousel controls={false} pause={"hover"}>
 
-      {featuredItems.map((featuredItem) => {
+      {featuredItems.map((featuredItem, index) => {
         return (
-          <Carousel.Item key={featuredItem} interval={5000}>
+          <Carousel.Item key={index} interval={4000}>
             <Image
               className="d-block w-60"
-              src="/images/pet.png"
+              src={featuredItem.images}
               alt={featuredItem.examine}
             />
             <Carousel.Caption>
