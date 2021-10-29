@@ -1,4 +1,4 @@
-import "./Nav.module.scss";
+import styles from "./Nav.module.scss";
 import { Link } from "react-router-dom";
 import { Nav, Navbar, Container } from "react-bootstrap";
 
@@ -7,6 +7,12 @@ const Navigation = () => {
 		<Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
 			<Container>
 				<Navbar.Brand as={Link} to="/">
+					<img
+						alt=""
+						src="./images/coins.png"
+						className={`d-inline-block align-top ${styles.logoImage}`}
+					/>
+					{""}
 					Le Grand XChange
 				</Navbar.Brand>
 				<Navbar.Toggle aria-controls="responsive-navbar-nav" />

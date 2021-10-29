@@ -17,3 +17,12 @@ img {
 		}
 	}
 }
+
+.footerBtn {
+	display: flex;
+	justify-content: space-around;
+
+	button {
+		font-size: 0.8rem;
+	}
+}

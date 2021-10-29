@@ -49,7 +49,7 @@ const ItemCard = ({ item, onUpdate }) => {
 					<Card.Text>Price: ${item.price}.00</Card.Text>
 					<Card.Text>Quantity Available: {item.quantity}</Card.Text>
 				</Card.Body>
-				<Card.Footer className="text-muted">
+				<Card.Footer className={`text-muted ${styles.footerBtn}`}>
 					<Button variant="danger" onClick={handleIncrement}>
 						Remove from Cart
 					</Button>
