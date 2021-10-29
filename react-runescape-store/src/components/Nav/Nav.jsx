@@ -1,0 +1,34 @@
+import styles from "./Nav.module.scss";
+import { Link } from "react-router-dom";
+import { Nav, Navbar, Container } from "react-bootstrap";
+
+const Navigation = () => {
+	return (
+		<Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+			<Container>
+				<Navbar.Brand as={Link} to="/">
+					<img
+						alt=""
+						src="./images/coins.png"
+						className={`d-inline-block align-top ${styles.logoImage}`}
+					/>
+					{""}
+					Le Grand XChange
+				</Navbar.Brand>
+				<Navbar.Toggle aria-controls="responsive-navbar-nav" />
+				<Navbar.Collapse id="responsive-navbar-nav">
+					<Nav className="ms-auto">
+						<Nav.Link as={Link} to="/">
+							Saved Items
+						</Nav.Link>
+						<Nav.Link as={Link} to="/cart">
+							Cart
+						</Nav.Link>
+					</Nav>
+				</Navbar.Collapse>
+			</Container>
+		</Navbar>
+	);
+};
+
+export default Navigation;

@@ -1,7 +1,31 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
+import styles from "./App.module.scss";
+
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Navigation from "./components/Nav/Nav";
+import ItemList from "./containers/ItemList";
+import Item from "./components/Item";
+import ItemCart from './containers/Cart';
+
 function App() {
+
   return (
-    <div className="App">
-      <h1>It is hooked up</h1>
+    <div className={`${styles.container_app}`}>
+      <Router>
+        <Navigation />
+        <Switch>
+          <Route path="/" exact>
+            <ItemList />
+          </Route>
+          <Route path="/items/:id">
+            <Item />
+          </Route>
+          <Route path="/cart">
+            <ItemCart />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
