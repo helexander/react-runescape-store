@@ -35,9 +35,12 @@ const ItemCart = ({ cartItems, handleAddProduct, handleRemoveProduct, handleClea
                 })}
             </div>
 
-            <div className={`${styles.cartItemsTotalHeader}`}>
-                Total Price
-                <div className={`${styles.cartItemsTotalBody}`}>
+            <div className={`${styles.cartItemsTotalContainer}`}>
+
+                <div className={`${styles.cartItemsTotalText}`}>
+                    Total Price
+                </div>
+                <div className={`${styles.cartItemsTotalPrice}`}>
                     ${totalPrice}
                 </div>
             </div>

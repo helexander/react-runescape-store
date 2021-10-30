@@ -1,4 +1,4 @@
-import "./Carousel.module.scss";
+import styles from "./Carousel.module.scss";
 import { Carousel, Image } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import { getFeaturedItem } from "../../services/stock";
@@ -23,26 +23,29 @@ const CarouselFeature = () => {
   }
 
   return (
-    <Carousel controls={false} pause={"hover"}>
+    <div className={styles.carouselContainer}>
+      <Carousel controls={false} pause={"hover"} className={styles.myCarousel}>
 
-      {featuredItems.map((featuredItem, index) => {
-        return (
-          <Carousel.Item key={index} interval={4000}>
-            <Image
-              className="d-block w-60"
-              src={featuredItem.images}
-              alt={featuredItem.examine}
-            />
-            <Carousel.Caption>
-              <h3>{featuredItem.name}</h3>
-              <p>{featuredItem.examine}</p>
-            </Carousel.Caption>
-          </Carousel.Item>
-        );
-      })
-      }
+        {featuredItems.map((featuredItem, index) => {
+          return (
+            <Carousel.Item key={index} interval={5000} className={styles.carouselItem}>
+              <Image
+                className={`d-block w-60 ${styles.carouselImg}`}
+                src={featuredItem.images}
+                alt={featuredItem.examine}
+              />
+              <Carousel.Caption className={styles.carouselBody}>
+                <h3>{featuredItem.name}</h3>
+                <p>{featuredItem.examine}</p>
+                <p>${featuredItem.price}</p>
+              </Carousel.Caption>
+            </Carousel.Item>
+          );
+        })
+        }
 
-    </Carousel>
+      </Carousel>
+    </div>
   )
 }
 

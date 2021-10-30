@@ -38,7 +38,7 @@ const ItemCard = ({ item, onUpdate, handleAddProduct, handleRemoveProduct }) => 
 
 	return (
 		<Card className={styles.itemCard}>
-			<Card.Img variant="top" src={item.images} alt={item.name} />
+			<Card.Img variant="top" src={item.images} alt={item.name} className={styles.itemCardImg} />
 			<Card.Body>
 				<Card.Title>
 					<Link to={`/items/${item.id}`}>{item.name}</Link>

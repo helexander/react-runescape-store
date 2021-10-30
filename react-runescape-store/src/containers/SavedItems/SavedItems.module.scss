@@ -9,6 +9,16 @@ img {
 	margin: 20px;
 	background-color: #583a24;
 
+	&Container {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 10px;
+	}
+
+	&Img {
+		padding: 20px;
+	}
+
 	a {
 		color: #ffffff;
 
