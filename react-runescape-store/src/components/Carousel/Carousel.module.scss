@@ -1,1 +1,37 @@
+.carousel {
+	&Container {
+		display: flex;
+		justify-content: center;
+	}
+	&Img {
+		display: flex;
+		justify-content: center;
+		align-content: center;
+		padding-top: 20px;
+		padding-left: 20px;
+		padding-bottom: 20px;
+		transform: translate(50px, 5px);
+		width: 20%;
+	}
 
+	&Body {
+		padding: 0;
+		transform: translate(10px, 20px);
+	}
+
+	&Item {
+		overflow-y: hidden;
+	}
+}
+
+.myCarousel {
+	display: flex;
+	width: 80vw;
+	height: 200px;
+	margin-top: 20px;
+	background-color: #767675;
+	border-radius: 10px;
+	justify-content: center;
+	align-content: center;
+	opacity: 0.8;
+}

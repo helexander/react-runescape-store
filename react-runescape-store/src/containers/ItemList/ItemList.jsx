@@ -5,7 +5,7 @@ import CarouselFeature from '../../components/Carousel';
 import styles from "./ItemList.module.scss";
 import { Container } from 'react-bootstrap';
 
-const ItemList = () => {
+const ItemList = ({ handleAddProduct, handleRemoveProduct }) => {
     const [items, setItems] = useState(null);
 
     const populateItems = async () => {
@@ -23,7 +23,7 @@ const ItemList = () => {
                 <div className={styles.ItemsHome}>
                     {items &&
                         items.map((item, index) => (
-                            <ItemCard item={item} key={index} onUpdate={handleQuantity} />
+                            <ItemCard item={item} key={index} onUpdate={handleQuantity} handleAddProduct={handleAddProduct} handleRemoveProduct={handleRemoveProduct} />
                         ))
                     }
                 </div>

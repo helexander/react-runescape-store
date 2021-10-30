@@ -21,7 +21,6 @@ export const getItems = async () => {
 // Getting featured items from firestore
 export const getFeaturedItem = async () => {
     const collectionRef = firestore.collection("items");
-
     const querySnap = await collectionRef.get();
     const clearedData = cleanItems(querySnap);
     const featuredTrue = clearedData.filter(
@@ -29,6 +28,18 @@ export const getFeaturedItem = async () => {
     );
 
     return featuredTrue;
+};
+
+// Getting saved items from firestore 
+export const getSavedItem = async () => {
+    const collectionRef = firestore.collection("items");
+    const querySnap = await collectionRef.get();
+    const clearedData = cleanItems(querySnap);
+    const savedTrue = clearedData.filter(
+        (savedTrue) => savedTrue.featured
+    );
+
+    return savedTrue;
 };
 
 // Getting a specific item from firestore

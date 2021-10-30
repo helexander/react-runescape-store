@@ -1,6 +1,8 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { findItem } from "../../services/stock";
+import styles from "./Item.module.scss";
+import { Button, Container } from "react-bootstrap";
 
 const Item = () => {
     const { id } = useParams();
@@ -20,13 +22,18 @@ const Item = () => {
     }
 
     return (
-        <div>
-
-            <h2>{item.name}</h2>
-            <p>Description: {item.description}</p>
-            <p>Members Item: {item.members ? "true" : "false"}</p>
-            <span>Quantity on hand: {item.quantity}</span>
-        </div>
+        <Container>
+            <div className={styles.itemContainer}>
+                <div className={styles.itemInfoContainer}>
+                    <h1 className={styles.itemName}>{item.name}</h1>
+                    <img src={item.images} alt={item.name} className={styles.itemImage} />
+                    <p className={styles.itemDesc}>{item.description}</p>
+                    <p>Members Item: {item.members ? "true" : "false"}</p>
+                    <p>Quantity on hand: {item.quantity}</p>
+                    <Button variant="success">Add to Saved Items</Button>
+                </div>
+            </div>
+        </Container>
     )
 }
 
