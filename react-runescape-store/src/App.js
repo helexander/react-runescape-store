@@ -13,6 +13,7 @@ import Footer from './components/Footer';
 function App() {
 
   const [items, setItems] = useState(null);
+  const [tempQty, setTempQty] = useState(0);
 
   const populateItems = async () => {
     const data = await getItems();
@@ -20,60 +21,48 @@ function App() {
   };
 
   useEffect(() => populateItems(), []);
+
+
   const handleQuantity = () => populateItems();
 
-  // const initialQty = items.quantity;
-  // const [quantity, setQuantity] = useState(initialQty);
 
-  // const handleDecrement = async () => {
-  // 	if (quantity > 0) {
-  // 		const partial = {
-  // 			quantity: quantity - 1,
-  // 		};
-
-  // 		setQuantity(quantity);
-
-  // 		await updateItem(item.id, partial);
-
-  // 		onUpdate();
-  // 	}
-  // };
-
-  // const handleIncrement = async () => {
-  // 	if (quantity < initialQty) {
-  // 		const partial = {
-  // 			quantity: quantity + 1,
-  // 		};
-
-  // 		setQuantity(partial.quantity);
-
-  // 		await updateItem(item.id, partial);
-
-  // 		onUpdate();
-  // 	}
-  // };
 
   const [cartItems, setCartItems] = useState([]);
 
   const handleAddProduct = (product) => {
     const ProductExist = cartItems.find((item) => item.id === product.id);
+
     if (ProductExist) {
+      if (ProductExist.quantity + 1 > product.quantity) {
+        alert("Sorry we have ran out of stock for this item");
+        return;
+      }
       setCartItems(cartItems.map((item) => item.id === product.id ?
         {
           ...ProductExist,
           quantity: ProductExist.quantity + 1
         }
+
         : item)
       );
+
+      setTempQty(product.quantity - ProductExist.quantity - 1)
+      console.log("Item remaining:" + (tempQty));
+
     } else {
       setCartItems([...cartItems, { ...product, quantity: 1 }]);
+      setTempQty(product.quantity - 1);
+      console.log("Item remaining:" + (tempQty));
     }
+
 
   }
 
   const handleRemoveProduct = (product) => {
     const ProductExist = cartItems.find((item) => item.id === product.id);
-    if (ProductExist.quantity === 1) {
+    if (!ProductExist) {
+      alert(`There are no ${(product.name).toLowerCase()}s to be removed from the cart`)
+    } else if (ProductExist.quantity === 1) {
       setCartItems(cartItems.filter((item) => item.id !== product.id));
     } else {
       setCartItems(cartItems.map((item) => item.id === product.id ? {
@@ -94,7 +83,7 @@ function App() {
         <Navigation cartItems={cartItems} />
         <Switch>
           <Route path="/" exact>
-            <ItemList handleAddProduct={handleAddProduct} handleRemoveProduct={handleRemoveProduct} items={items} />
+            <ItemList handleAddProduct={handleAddProduct} handleRemoveProduct={handleRemoveProduct} items={items} tempQty={tempQty} />
           </Route>
           <Route path="/items/:id">
             <Item />
