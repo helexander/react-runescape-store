@@ -8,6 +8,7 @@ import ItemList from "./containers/ItemList";
 import Item from "./components/Item";
 import ItemCart from './containers/Cart';
 import SavedItems from './containers/SavedItems';
+import Footer from './components/Footer';
 
 function App() {
 
@@ -64,6 +65,7 @@ function App() {
             <SavedItems />
           </Route>
         </Switch>
+        <Footer />
       </Router>
     </div>
   );

@@ -10,8 +10,9 @@ const Navigation = ({ cartItems }) => {
 
 	const togglePlay = () => {
 		setPlay(!play);
-		play ? audioRef.current.play() : audioRef.current.pause();
 	}
+
+	play ? audioRef.current.play() : audioRef.current.pause();
 
 	return (
 		<Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -26,7 +27,7 @@ const Navigation = ({ cartItems }) => {
 					Le Grand XChange
 				</Navbar.Brand>
 				<Button variant="secondary" onClick={togglePlay} className={styles.navBtn} >
-					{play ? <i className="fas fa-volume-mute"></i> : <i className="fas fa-volume-up"></i>}
+					{play ? <i className="fas fa-volume-up"></i> : <i className="fas fa-volume-mute"></i>}
 				</Button>
 				<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 				<Navbar.Collapse id="responsive-navbar-nav">
