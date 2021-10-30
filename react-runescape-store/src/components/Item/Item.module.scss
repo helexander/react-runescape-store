@@ -1,0 +1,33 @@
+.item {
+	&Container {
+		display: flex;
+		background-color: #767675;
+		margin-top: 50px;
+		opacity: 0.85;
+		border-radius: 10px;
+	}
+
+	&InfoContainer {
+		margin: 20px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	&Name {
+		text-align: center;
+		text-decoration: underline;
+	}
+
+	&Image {
+		width: 200px;
+		height: 150px;
+		padding: 20px;
+	}
+
+	&Desc {
+		text-align: justify;
+		margin-top: 10px;
+		margin-bottom: 20px;
+	}
+}

@@ -3,11 +3,21 @@ img {
 	width: 150px;
 }
 
-.itemCard {
+.savedCard {
 	width: 14rem;
 	text-align: center;
 	margin: 20px;
 	background-color: #583a24;
+
+	&Container {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 10px;
+	}
+
+	&Img {
+		padding: 20px;
+	}
 
 	a {
 		color: #ffffff;
@@ -15,10 +25,6 @@ img {
 		&:hover {
 			color: #ffba08;
 		}
-	}
-
-	&Img {
-		padding: 20px;
 	}
 }
 
