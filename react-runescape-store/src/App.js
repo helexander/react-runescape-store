@@ -29,19 +29,36 @@ function App() {
 
   }
 
+  const handleRemoveProduct = (product) => {
+    const ProductExist = cartItems.find((item) => item.id === product.id);
+    if (ProductExist.quantity === 1) {
+      setCartItems(cartItems.filter((item) => item.id !== product.id));
+    } else {
+      setCartItems(cartItems.map((item) => item.id === product.id ? {
+        ...ProductExist, quantity: ProductExist.quantity - 1
+      }
+        : item)
+      );
+    }
+  }
+
+  const handleClearCart = () => {
+    setCartItems([]);
+  }
+
   return (
     <div className={`${styles.container_app}`}>
       <Router>
-        <Navigation />
+        <Navigation cartItems={cartItems} />
         <Switch>
           <Route path="/" exact>
-            <ItemList handleAddProduct={handleAddProduct} />
+            <ItemList handleAddProduct={handleAddProduct} handleRemoveProduct={handleRemoveProduct} />
           </Route>
           <Route path="/items/:id">
             <Item />
           </Route>
           <Route path="/cart">
-            <ItemCart cartItems={cartItems} handleAddProduct={handleAddProduct} />
+            <ItemCart cartItems={cartItems} handleAddProduct={handleAddProduct} handleRemoveProduct={handleRemoveProduct} handleClearCart={handleClearCart} />
           </Route>
           <Route path="/saved">
             <SavedItems />

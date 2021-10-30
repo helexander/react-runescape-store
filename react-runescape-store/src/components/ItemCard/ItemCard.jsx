@@ -4,37 +4,37 @@ import { updateItem } from "../../services/stock";
 import styles from "./ItemCard.module.scss";
 import { Card, Button } from "react-bootstrap";
 
-const ItemCard = ({ item, onUpdate, handleAddProduct }) => {
+const ItemCard = ({ item, onUpdate, handleAddProduct, handleRemoveProduct }) => {
 	const initialQty = item.quantity;
 	const [quantity, setQuantity] = useState(initialQty);
 
-	const handleDecrement = async () => {
-		if (quantity > 0) {
-			const partial = {
-				quantity: quantity - 1,
-			};
+	// const handleDecrement = async () => {
+	// 	if (quantity > 0) {
+	// 		const partial = {
+	// 			quantity: quantity - 1,
+	// 		};
 
-			setQuantity(quantity);
+	// 		setQuantity(quantity);
 
-			await updateItem(item.id, partial);
+	// 		await updateItem(item.id, partial);
 
-			onUpdate();
-		}
-	};
+	// 		onUpdate();
+	// 	}
+	// };
 
-	const handleIncrement = async () => {
-		if (quantity < initialQty) {
-			const partial = {
-				quantity: quantity + 1,
-			};
+	// const handleIncrement = async () => {
+	// 	if (quantity < initialQty) {
+	// 		const partial = {
+	// 			quantity: quantity + 1,
+	// 		};
 
-			setQuantity(partial.quantity);
+	// 		setQuantity(partial.quantity);
 
-			await updateItem(item.id, partial);
+	// 		await updateItem(item.id, partial);
 
-			onUpdate();
-		}
-	};
+	// 		onUpdate();
+	// 	}
+	// };
 
 	return (
 		<Card className={styles.itemCard}>
@@ -48,7 +48,10 @@ const ItemCard = ({ item, onUpdate, handleAddProduct }) => {
 				<Card.Text>Quantity Available: {item.quantity}</Card.Text>
 			</Card.Body>
 			<Card.Footer className={`text-muted ${styles.footerBtn}`}>
-				<Button variant="danger" onClick={handleIncrement}>
+				{/* <Button variant="danger" onClick={handleIncrement}>
+					Remove from Cart
+				</Button> */}
+				<Button variant="danger" onClick={() => handleRemoveProduct(item)}>
 					Remove from Cart
 				</Button>
 				{/* <Button variant="success" onClick={handleDecrement}>

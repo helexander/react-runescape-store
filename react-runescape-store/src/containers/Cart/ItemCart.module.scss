@@ -1,13 +1,97 @@
 .cartItems {
+	margin: 30px auto;
+	width: 50%;
+	background-color: orange;
+	border: 2px solid black;
+	border-radius: 5px;
+
 	&Header {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		font-size: 18px;
+		height: 50px;
+		border-bottom: 2px solid black;
 	}
 
 	&Empty {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 18px;
+		font-weight: 700;
+		padding-top: 20px;
+		padding-bottom: 20px;
 	}
 
 	&List {
+		display: flex;
+		align-items: center;
+		padding: 20px 20px 0 20px;
+		font-size: 20px;
+		font-weight: 700;
+		margin-left: 5%;
+	}
+
+	&Name {
+		width: 25%;
+	}
+
+	&Btn {
+		width: 25%;
+
+		&Add {
+			width: 30px;
+			margin-right: 15px;
+			font-weight: 700;
+			border: none;
+			border-radius: 3px;
+			font-size: 18px;
+			color: white;
+			cursor: pointer;
+		}
+
+		&Remove {
+			width: 30px;
+			margin-right: 15px;
+			font-weight: 700;
+			border: none;
+			border-radius: 3px;
+			font-size: 18px;
+			color: white;
+			cursor: pointer;
+		}
+
+		&Clear {
+			display: flex;
+			justify-content: flex-end;
+			margin-top: 10px;
+			margin-right: 10px;
+		}
 	}
 
 	&Image {
+		width: 100px;
+		height: auto;
+		border: 2px solid black;
+		margin-right: 10px;
+	}
+
+	&Price {
+	}
+
+	&Total {
+		&Header {
+			display: flex;
+			padding: 20px 20px 0 20px;
+			font-size: 20px;
+			font-weight: 700;
+			border-top: 2px solid black;
+		}
+
+		&Body {
+			display: flex;
+			padding-left: 45%;
+		}
 	}
 }

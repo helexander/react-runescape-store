@@ -2,7 +2,7 @@ import styles from "./Nav.module.scss";
 import { Link } from "react-router-dom";
 import { Nav, Navbar, Container } from "react-bootstrap";
 
-const Navigation = () => {
+const Navigation = ({ cartItems }) => {
 	return (
 		<Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
 			<Container>
@@ -22,7 +22,10 @@ const Navigation = () => {
 							Saved Items
 						</Nav.Link>
 						<Nav.Link as={Link} to="/cart">
-							Cart
+							Cart <i class="fas fa-shopping-cart"></i>
+							<span className={styles.cart}>
+								{cartItems.length === 0 ? "" : cartItems.length}
+							</span>
 						</Nav.Link>
 					</Nav>
 				</Navbar.Collapse>
