@@ -23,7 +23,7 @@ function App() {
   useEffect(() => populateItems(), []);
 
 
-  const handleQuantity = () => populateItems();
+  // const handleQuantity = () => populateItems();
 
 
 
