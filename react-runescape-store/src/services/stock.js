@@ -36,7 +36,7 @@ export const getSavedItem = async () => {
     const querySnap = await collectionRef.get();
     const clearedData = cleanItems(querySnap);
     const savedTrue = clearedData.filter(
-        (savedTrue) => savedTrue.featured
+        (savedTrue) => savedTrue.saved
     );
 
     return savedTrue;

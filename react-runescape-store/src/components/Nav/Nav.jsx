@@ -36,7 +36,7 @@ const Navigation = ({ cartItems }) => {
 							Saved Items
 						</Nav.Link>
 						<Nav.Link as={Link} to="/cart">
-							Cart <i class="fas fa-shopping-cart"></i>
+							Cart <i className="fas fa-shopping-cart"></i>
 							<span className={styles.cart}>
 								{cartItems.length === 0 ? "" : cartItems.length}
 							</span>
