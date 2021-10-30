@@ -1,20 +1,9 @@
-import React, { useEffect, useState } from 'react'
-import { getItems } from '../../services/stock';
 import ItemCard from '../../components/ItemCard/ItemCard';
 import CarouselFeature from '../../components/Carousel';
 import styles from "./ItemList.module.scss";
 import { Container } from 'react-bootstrap';
 
-const ItemList = ({ handleAddProduct, handleRemoveProduct }) => {
-    const [items, setItems] = useState(null);
-
-    const populateItems = async () => {
-        const data = await getItems();
-        setItems(data);
-    };
-
-    useEffect(() => populateItems(), []);
-    const handleQuantity = () => populateItems();
+const ItemList = ({ items, handleAddProduct, handleRemoveProduct }) => {
 
     return (
         <div>
@@ -23,7 +12,7 @@ const ItemList = ({ handleAddProduct, handleRemoveProduct }) => {
                 <div className={styles.ItemsHome}>
                     {items &&
                         items.map((item, index) => (
-                            <ItemCard item={item} key={index} onUpdate={handleQuantity} handleAddProduct={handleAddProduct} handleRemoveProduct={handleRemoveProduct} />
+                            <ItemCard item={item} key={index} handleAddProduct={handleAddProduct} handleRemoveProduct={handleRemoveProduct} />
                         ))
                     }
                 </div>
