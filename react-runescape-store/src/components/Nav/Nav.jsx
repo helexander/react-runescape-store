@@ -1,8 +1,18 @@
 import styles from "./Nav.module.scss";
 import { Link } from "react-router-dom";
-import { Nav, Navbar, Container } from "react-bootstrap";
+import { Nav, Navbar, Container, Button } from "react-bootstrap";
+import song from "../../misc/audio/osrsTheme.mp3";
+import React, { useState, useRef } from "react";
 
 const Navigation = ({ cartItems }) => {
+	const [play, setPlay] = useState(false);
+	const audioRef = useRef(new Audio(song));
+
+	const togglePlay = () => {
+		setPlay(!play);
+		play ? audioRef.current.play() : audioRef.current.pause();
+	}
+
 	return (
 		<Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
 			<Container>
@@ -15,6 +25,9 @@ const Navigation = ({ cartItems }) => {
 					{""}
 					Le Grand XChange
 				</Navbar.Brand>
+				<Button variant="secondary" onClick={togglePlay} className={styles.navBtn} >
+					{play ? <i className="fas fa-volume-mute"></i> : <i className="fas fa-volume-up"></i>}
+				</Button>
 				<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 				<Navbar.Collapse id="responsive-navbar-nav">
 					<Nav className="ms-auto">
