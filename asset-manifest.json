@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/react-runescape-store/static/css/main.a0c34071.chunk.css",
+    "main.js": "/react-runescape-store/static/js/main.d7dd6ba3.chunk.js",
+    "main.js.map": "/react-runescape-store/static/js/main.d7dd6ba3.chunk.js.map",
+    "runtime-main.js": "/react-runescape-store/static/js/runtime-main.9a0c6a44.js",
+    "runtime-main.js.map": "/react-runescape-store/static/js/runtime-main.9a0c6a44.js.map",
+    "static/css/2.0a9ec390.chunk.css": "/react-runescape-store/static/css/2.0a9ec390.chunk.css",
+    "static/js/2.0458c73d.chunk.js": "/react-runescape-store/static/js/2.0458c73d.chunk.js",
+    "static/js/2.0458c73d.chunk.js.map": "/react-runescape-store/static/js/2.0458c73d.chunk.js.map",
+    "static/js/3.62f41f6f.chunk.js": "/react-runescape-store/static/js/3.62f41f6f.chunk.js",
+    "static/js/3.62f41f6f.chunk.js.map": "/react-runescape-store/static/js/3.62f41f6f.chunk.js.map",
+    "index.html": "/react-runescape-store/index.html",
+    "static/css/2.0a9ec390.chunk.css.map": "/react-runescape-store/static/css/2.0a9ec390.chunk.css.map",
+    "static/css/main.a0c34071.chunk.css.map": "/react-runescape-store/static/css/main.a0c34071.chunk.css.map",
+    "static/js/2.0458c73d.chunk.js.LICENSE.txt": "/react-runescape-store/static/js/2.0458c73d.chunk.js.LICENSE.txt",
+    "static/media/osrsTheme.1f474821.mp3": "/react-runescape-store/static/media/osrsTheme.1f474821.mp3",
+    "static/media/App.module.scss": "/react-runescape-store/static/media/runescape_uf.e22fb29e.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9a0c6a44.js",
+    "static/css/2.0a9ec390.chunk.css",
+    "static/js/2.0458c73d.chunk.js",
+    "static/css/main.a0c34071.chunk.css",
+    "static/js/main.d7dd6ba3.chunk.js"
+  ]
+}
